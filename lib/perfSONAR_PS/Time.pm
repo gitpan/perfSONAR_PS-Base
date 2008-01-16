@@ -1,5 +1,7 @@
 package perfSONAR_PS::Time;
 
+our $VERSION = 0.01;
+
 use strict;
 use Log::Log4perl qw(get_logger);
 use Data::Dumper;
