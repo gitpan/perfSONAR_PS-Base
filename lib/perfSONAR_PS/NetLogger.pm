@@ -1,6 +1,6 @@
 package perfSONAR_PS::NetLogger;
 
-our $VERSION = 0.03;
+our $VERSION = 0.04;
 
 require 5.002;
 use Time::HiRes;
