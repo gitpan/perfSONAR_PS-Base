@@ -1,6 +1,6 @@
 package perfSONAR_PS::Time;
 
-our $VERSION = 0.04;
+our $VERSION = 0.05;
 
 use strict;
 use Log::Log4perl qw(get_logger);
