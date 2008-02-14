@@ -1,3 +1,6 @@
+0.07
+- A bug fix in the module dependencies as reported by Jared and Brian
+
 0.02	2008-01-16
 - Switch back from using the version module
 

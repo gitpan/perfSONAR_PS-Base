@@ -2,7 +2,7 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     'NAME' => 'perfSONAR_PS::Base',
-    'VERSION' => 0.06,
+    'VERSION' => 0.07,
     'AUTHOR' => 'Aaron Brown <aaron@internet2.edu>',
     'PREREQ_PM' => {
         "strict" => 0,
@@ -15,7 +15,7 @@ WriteMakefile(
 	"LWP::UserAgent" => 2.032,
 	"Params::Validate" => 0.70,
 	"Data::Compare" => 0.09,
-	"Error::Simple" => 0,
+	"Error" => 0,
 	"Test::More" => 0,
     }
 );
