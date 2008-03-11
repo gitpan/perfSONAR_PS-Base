@@ -1,12 +1,14 @@
 package perfSONAR_PS::NetLogger;
 
-our $VERSION = 0.06;
-
+use strict;
+use warnings;
 require 5.002;
 use Time::HiRes;
   
+our $VERSION = 0.08;
+
 # initialize Global GUID
-$GUID = `/usr/bin/uuidgen`;
+my $GUID = `/usr/bin/uuidgen`;
 
 sub format {
   my($evnt, $data) = @_;
@@ -15,11 +17,11 @@ sub format {
     $str = "ts=$data->{ 'ts' } ";
   }
   else {
-    $dt = date();
+    my $dt = date();
     $str = "ts=$dt ";
   }
   $str .= "event=$evnt ";
-  foreach $k (keys %$data) {
+  foreach my $k (keys %$data) {
     $str .= "$k=$data->{$k} ";
   }
   $str .= "guid=".$GUID;
@@ -34,14 +36,15 @@ sub date {
                  $mday,$hour,$min,$sec,$usec);
 }
 
-sub get_guid()
+sub get_guid
 {
   return (`/usr/bin/uuidgen`);
 }
 
-sub set_guid()  # reset GUID
+sub set_guid  # reset GUID
 {
   $GUID = `/usr/bin/uuidgen`;
+  return;
 }
 
 
