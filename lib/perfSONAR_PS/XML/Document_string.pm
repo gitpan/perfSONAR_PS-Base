@@ -13,8 +13,9 @@ use strict;
 use warnings;
 use Log::Log4perl qw(get_logger :nowarn);
 use Params::Validate qw(:all);
+use perfSONAR_PS::ParameterValidation;
 
-our $VERSION = 0.08;
+our $VERSION = 0.09;
 
 use fields 'OPEN_TAGS', 'DEFINED_PREFIXES', 'STRING';
 
@@ -69,7 +70,7 @@ sub getNormalizedURI {
 sub startElement {
 	#my ($self, @params) = shift;
     my $self = shift;
-	my $args = validate(@_, 
+	my $args = validateParams(@_, 
 			{
 				prefix => { type => SCALAR, regex => qr/^[a-z0-9]/ },
 				namespace => { type => SCALAR, regex => qr/^http/ },
@@ -177,7 +178,7 @@ sub startElement {
 =cut
 sub createElement {
 	my $self = shift;
-	my $args = validate(@_, 
+	my $args = validateParams(@_, 
 			{
 				prefix => { type => SCALAR, regex => qr/^[a-z0-9]/ },
 				namespace => { type => SCALAR, regex => qr/^http/ },
